@@ -1,0 +1,3 @@
+package Nchf_SpendingLimitControl
+
+type DefaultCallbackApi service
