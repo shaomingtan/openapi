@@ -1,0 +1,3 @@
+package Nchf_ConvergedCharging
+
+type DefaultCallbackApi service
