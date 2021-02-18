@@ -9,13 +9,10 @@
 
 package models
 
-import "time"
-
 // SpendingLimitStatus 3GPP TS 29 594 Section 5.6.2.3
 type SpendingLimitStatus struct {
 	Supi string `json:"supi" yaml:"supi" bson:"supi" mapstructure:"Supi"`
 	// A map, keyed by policyCounterId, of the status of the requested policy counters.
 	StatusInfos       map[string]PolicyCounterInfo `json:"statusInfos,omitempty" yaml:"statusInfos" bson:"statusInfos" mapstructure:"StatusInfos"`
-	Expiry            *time.Time                   `json:"expiry,omitempty" yaml:"expiry" bson:"expiry" mapstructure:"Expiry"`
 	SupportedFeatures string                       `json:"supportedFeatures,omitempty" yaml:"supportedFeatures" bson:"supportedFeatures" mapstructure:"SupportedFeatures"`
 }

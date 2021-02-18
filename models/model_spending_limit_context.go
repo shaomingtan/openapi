@@ -9,14 +9,11 @@
 
 package models
 
-import "time"
-
 // SpendingLimitContext 3GPP TS 29 594 Section 5.6.2.2
 type SpendingLimitContext struct {
-	Supi              string     `json:"supi" yaml:"supi" bson:"supi" mapstructure:"Supi"`
-	Gpsi              string     `json:"gpsi,omitempty" yaml:"gpsi" bson:"gpsi" mapstructure:"Gpsi"`
-	PolicyCounterIds  []string   `json:"policyCounterIds" yaml:"policyCounterIds" bson:"policyCounterIds" mapstructure:"PolicyCounterIds"`
-	NotificationUri   string     `json:"notificationUri" yaml:"notificationUri" bson:"notificationUri" mapstructure:"NotificationUri"`
-	Expiry            *time.Time `json:"expiry,omitempty" yaml:"expiry" bson:"expiry" mapstructure:"Expiry"`
-	SupportedFeatures string     `json:"supportedFeatures,omitempty" yaml:"supportedFeatures" bson:"supportedFeatures" mapstructure:"SupportedFeatures"`
+	Supi              string   `json:"supi" yaml:"supi" bson:"supi" mapstructure:"Supi"`
+	Gpsi              string   `json:"gpsi,omitempty" yaml:"gpsi" bson:"gpsi" mapstructure:"Gpsi"`
+	PolicyCounterIds  []string `json:"policyCounterIds" yaml:"policyCounterIds" bson:"policyCounterIds" mapstructure:"PolicyCounterIds"`
+	NotifUri          string   `json:"notifUri" yaml:"notifUri" bson:"notifUri" mapstructure:"NotifUri"`
+	SupportedFeatures string   `json:"supportedFeatures,omitempty" yaml:"supportedFeatures" bson:"supportedFeatures" mapstructure:"SupportedFeatures"`
 }
