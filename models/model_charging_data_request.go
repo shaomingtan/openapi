@@ -13,14 +13,18 @@ import "time"
 
 // ChargingDataRequest TS 132 291 Section 6.1.6.2.1.1
 type ChargingDataRequest struct {
-	SubscriberIdentifier            string                   `json:"subscriberIdentifier" yaml:"subscriberIdentifier" bson:"subscriberIdentifier" mapstructure:"SubscriberIdentifier"`
-	NfConsumerIdentification        NFConsumerIdentification `json:"NfConsumerIdentification" yaml:"nfConsumerIdentification" bson:"nfConsumerIdentification" mapstructure:"NfConsumerIdentification"`
-	InvocationTimeStamp             *time.Time               `json:"invocationTimeStamp" yaml:"invocationTimeStamp" bson:"invocationTimeStamp" mapstructure:"InvocationTimeStamp"`
-	InvocationSequenceNumber        uint32                   `json:"invocationSequenceNumber" yaml:"invocationSequenceNumber" bson:"invocationSequenceNumber" mapstructure:"InvocationSequenceNumber"`
-	OneTimeEvent                    bool                     `json:"oneTimeEvent" yaml:"oneTimeEvent" bson:"oneTimeEvent" mapstructure:"OneTimeEvent"`
-	OneTimeEventType                []ChargingDataEventType  `json:"oneTimeEventType" yaml:"oneTimeEventType" bson:"oneTimeEventType" mapstructure:"OneTimeEventType"`
-	NotifyUri                       string                   `json:"notifyUri" yaml:"notifyUri" bson:"notifyUri" mapstructure:"NotifyUri"`
-	ServiceSpecificationInformation string                   `json:"serviceSpecificationInformation" yaml:"serviceSpecificationInformation" bson:"serviceSpecificationInformation" mapstructure:"ServiceSpecificationInformation"`
-	MultipleUnitUsage               []MultipleUnitUsage      `json:"multipleUnitUsage" yaml:"multipleUnitUsage" bson:"multipleUnitUsage" mapstructure:"MultipleUnitUsage"`
-	Triggers                        []Trigger                `json:"triggers" yaml:"triggers" bson:"triggers" mapstructure:"Triggers"`
+	SubscriberIdentifier            string                        `json:"subscriberIdentifier" yaml:"subscriberIdentifier" bson:"subscriberIdentifier" mapstructure:"SubscriberIdentifier"`
+	NfConsumerIdentification        NFConsumerIdentification      `json:"NfConsumerIdentification" yaml:"nfConsumerIdentification" bson:"nfConsumerIdentification" mapstructure:"NfConsumerIdentification"`
+	ChargingId                      uint32                        `json:"chargingId" yaml:"chargingId" bson:"chargingId" mapstructure:"ChargingId"`
+	InvocationTimeStamp             *time.Time                    `json:"invocationTimeStamp" yaml:"invocationTimeStamp" bson:"invocationTimeStamp" mapstructure:"InvocationTimeStamp"`
+	InvocationSequenceNumber        uint32                        `json:"invocationSequenceNumber" yaml:"invocationSequenceNumber" bson:"invocationSequenceNumber" mapstructure:"InvocationSequenceNumber"`
+	OneTimeEvent                    bool                          `json:"oneTimeEvent" yaml:"oneTimeEvent" bson:"oneTimeEvent" mapstructure:"OneTimeEvent"`
+	OneTimeEventType                []ChargingDataEventType       `json:"oneTimeEventType" yaml:"oneTimeEventType" bson:"oneTimeEventType" mapstructure:"OneTimeEventType"`
+	NotifyUri                       string                        `json:"notifyUri" yaml:"notifyUri" bson:"notifyUri" mapstructure:"NotifyUri"`
+	ServiceSpecificationInformation string                        `json:"serviceSpecificationInformation" yaml:"serviceSpecificationInformation" bson:"serviceSpecificationInformation" mapstructure:"ServiceSpecificationInformation"`
+	MultipleUnitUsage               []MultipleUnitUsage           `json:"multipleUnitUsage" yaml:"multipleUnitUsage" bson:"multipleUnitUsage" mapstructure:"MultipleUnitUsage"`
+	Triggers                        []Trigger                     `json:"triggers" yaml:"triggers" bson:"triggers" mapstructure:"Triggers"`
+	PduSessionChargingInformation   PduSessionChargingInformation `json:"pduSessionChargingInformation" yaml:"pduSessionChargingInformation" bson:"pduSessionChargingInformation" mapstructure:"PduSessionChargingInformation"`
+	RoamingQBCInformation           RoamingQBCInformation         `json:"roamingQBCInformation" yaml:"roamingQBCInformation" bson:"roamingQBCInformation" mapstructure:"RoamingQBCInformation"`
+	// SmsChargingInformation          SmsChargingInformation        `json:"smsChargingInformation" yaml:"smsChargingInformation" bson:"smsChargingInformation" mapstructure:"SmsChargingInformation"` TODO define SmsChargingInformation
 }
