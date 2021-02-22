@@ -9,8 +9,16 @@
 
 package models
 
+import "time"
+
 // ChargingDataResponse TS 132 291 Section 6.1.6.2.2.2
 type ChargingDataResponse struct {
-	PDUSessionChargingInformation PduSessionChargingInformation `json:"pDUSessionChargingInformation" yaml:"pDUSessionChargingInformation" bson:"pDUSessionChargingInformation" mapstructure:"PDUSessionChargingInformation"`
+	InvocationTimestamp           *time.Time                    `json:"invocationTimeStamp" yaml:"invocationTimeStamp" bson:"invocationTimeStamp" mapstructure:"InvocationTimeStamp"`
+	InvocationResult              InvocationResult              `json:"invocationResult" yaml:"invocationResult" bson:"invocationResult" mapstructure:"InvocationResult"`
+	InvocationSequenceNumber      uint32                        `json:"invocationSequenceNumber" yaml:"invocationSequenceNumber" bson:"invocationSequenceNumber" mapstructure:"InvocationSequenceNumber"`
+	SessionFailover               SessionFailover               `json:"sessionFailover" yaml:"sessionFailover" bson:"sessionFailover" mapstructure:"SessionFailover"`
+	multipleUnitInformation       []MultipleUnitUsage           `json:"multipleUnitUsage" yaml:"multipleUnitUsage" bson:"multipleUnitUsage" mapstructure:"MultipleUnitUsage"`
+	triggers                      []Trigger                     `json:"triggers" yaml:"triggers" bson:"triggers" mapstructure:"Triggers"`
+	PduSessionChargingInformation PduSessionChargingInformation `json:"pduSessionChargingInformation" yaml:"pduSessionChargingInformation" bson:"pduSessionChargingInformation" mapstructure:"PduSessionChargingInformation"`
 	RoamingQBCInformation         RoamingQBCInformation         `json:"roamingQBCInformation" yaml:"roamingQBCInformation" bson:"roamingQBCInformation" mapstructure:"RoamingQBCInformation"`
 }

@@ -13,6 +13,7 @@ type Trigger struct {
 	TriggerType     TriggerType     `json:"triggerType"`
 	TriggerCategory TriggerCategory `json:"triggerCategory"`
 	TimeLimit       int32           `json:"timeLimit,omitempty"`
-	VolumeLimit     int32           `json:"volumeLimit,omitempty"`
-	MaxNumberOfccc  int32           `json:"maxNumberOfccc,omitempty"`
+	VolumeLimit     uint32          `json:"volumeLimit,omitempty"`
+	VolumeLimit64   uint64          `json:"volumeLimit64,omitempty"`
+	MaxNumberOfccc  uint32          `json:"maxNumberOfccc,omitempty"`
 }
