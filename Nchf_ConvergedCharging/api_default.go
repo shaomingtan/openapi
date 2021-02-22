@@ -402,7 +402,7 @@ func (a *DefaultApiService) Release(ctx context.Context, chargingDataRequest mod
 	}
 
 	switch localVarHTTPResponse.StatusCode {
-	case 200:
+	case 204:
 		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
